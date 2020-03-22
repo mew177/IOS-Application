@@ -48,8 +48,9 @@ class ViewController: UIViewController {
         if player == -1 { winner = 2 }
         
         let controller = UIAlertController(title: nil, message: "Player \(winner) wins", preferredStyle: .alert)
-        let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
-        controller.addAction(okAction)
+        controller.addAction(UIAlertAction(title: "OK", style: .default, handler: { (action) in
+            self.regame()
+        }))
         present(controller, animated: true, completion: nil)
     }
     
